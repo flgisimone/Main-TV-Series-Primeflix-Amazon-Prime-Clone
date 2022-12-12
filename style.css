@@ -1,0 +1,388 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+    background: rgb(22,32,41);
+    background: radial-gradient(circle, rgba(22,32,41,1) 0%, rgba(38,55,72,1) 100%);
+    position: relative;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+ul{
+    list-style-type: none ;
+}
+
+button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.header{
+    background: rgb(22,32,41);
+    background: radial-gradient(circle, rgba(22,32,41,1) 0%, rgba(38,55,72,1) 100%);
+}
+
+.container_Header{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    padding: 20px 0 ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 25px;
+}
+
+.esplora_Btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text_Btn,
+.arrow_Btn{
+    color: #00A8E1;
+    font-weight: bold;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.arrowUp_Btn_Category{
+    display: none;
+}
+
+.menu_Container{
+    width: 90%;
+    margin: auto;
+    padding: 0 0 20px 0;
+    font-size: 20px;
+    display: none;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.ul_Menu{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn_Close_Menu{
+    color: white;
+    font-size: 27px;
+    padding: 5px;
+}
+
+.container_Categoty_Btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category_Btn{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrowUp_Btn_Category{
+    color: white;
+    font-size: 20px;
+}
+
+.subMenu_Category{
+    display: none;
+    flex-direction: column;
+    margin: 10px 10px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: rgb(41,77,105);
+    background: linear-gradient(90deg, #294d69 0%, rgba(15,23,30,1) 100%);
+    gap: 20px;
+}
+
+.subMenu_Category h5{
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.subMenu_Category ul li{
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.btn_Search{
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+}
+
+.btn_Close_Search{
+    display: none;
+    font-size: 22px;
+    color: white;
+    padding: 5px;
+}
+
+.btn_Account{
+    font-size: 25px;
+    color: white;
+    padding: 5px;
+
+}
+
+.container_Search{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search_Bar{
+    width: 160px;
+    height: 27px;
+    display: none;
+    padding-left: 10px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.menu_Account{
+    width: 90%;
+    margin: auto;
+    display: none;
+    justify-content: flex-end;
+    gap: 15px;
+    color: white;
+    font-size: 18px;
+    padding: 0 0 20px 0;
+}
+
+.ul_menu_Account{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.btn_Close_Menu_Account{
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+}
+
+.img_latest_Series{
+    width: 100%;
+}
+
+.container_latest_Series{
+    position: relative;
+}
+
+.modal_PopularSeries{
+    display: none;
+    width: 90%;
+    border-radius: 10px;
+    background-color: #152836;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btnModal_PopularSeries{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: white;
+    padding: 0 30px;
+    background-color: #152836;
+    opacity: 0.95;
+    border-radius: 10px
+}
+
+.iconCloseModalBtn{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.container_InfoModal{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: 50px 20px 30px 20px;
+    gap: 15px;
+}
+
+.container_Play{
+    color: #00A8E1;
+    align-self: flex-end;
+}
+
+.container_Play a{ 
+    color: #00A8E1;
+    font-size: 20px;
+} 
+
+.name_PopularSeries{
+    font-size: 30px;
+}
+
+.voteAverage_PopularSeries,
+.voteCount_PopularSeries{
+    font-size: 20px;
+}
+
+.containerSeries{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.containerSeries h2{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.serieTV_Popular,
+.serieTV_TopRated{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header_SerieTV_Popular,
+.header_SerieTV_TopRated{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerSeries a{
+    color: #00A8E1;
+}
+
+.container_SerieTV_Popular,
+.container_SerieTV_TopRated{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    overflow-x: hidden;
+    overflow-x: scroll;
+}
+
+.subContainer_SerieTV_Popular,
+.subContainer_SerieTV_TopRated{
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: scroll;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.card_popular_Series,
+.card_pTopRated_Series{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.img_popular_Series,
+.img_topRated_Series{
+    width: 150px;
+}
+
+.btnInfo_popular_TVSeries,
+.btnInfo_topRated_TVSeries{
+    align-self: center;
+    font-size: 17px;
+    color:#00A8E1
+}
+
+.text_Play{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 60px;
+    border: 2px solid white;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.container_modal_InfoSeries{
+    display: none;
+    padding: 100%;
+    background-color: rgba(0, 0, 0, 0.815);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal_InfoSeries{
+    display: none;
+    width: 300px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: #152836;
+}
+
+.container_InfoSeries{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: 50px 20px 30px 20px;
+    gap: 15px;
+}
+
+.container_InfoSeries .name_PopularSeries {
+    font-size: 30px;
+}
+
+.overview_PopularSeries{
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    height: 250px;
+    overflow-y: hidden;
+    overflow-y: scroll
+}
