@@ -47,6 +47,12 @@ button{
     font-size: 25px;
 }
 
+.menuHeaders{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .esplora_Btn{
     display: flex;
     align-items: center;
@@ -193,6 +199,12 @@ button{
     padding: 5px;
 }
 
+.btn_Access,
+.btn_Signup{
+    color: white;
+    font-size: 20px;
+}
+
 .img_hero_Series{
     width: 100%;
     height: 200px;
@@ -326,6 +338,7 @@ button{
 .img_popular_Series,
 .img_topRated_Series{
     width: 150px;
+    cursor: pointer;
 }
 
 .btnInfo_popular_TVSeries,
@@ -375,6 +388,45 @@ button{
     gap: 15px;
 }
 
+.container_SerieTV_Popular::-webkit-scrollbar{
+    display: none;
+}
+
+.subContainer_SerieTV_Popular::-webkit-scrollbar{
+    height: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.subContainer_SerieTV_Popular::-webkit-scrollbar-track{
+    display: none;
+}
+
+.subContainer_SerieTV_Popular::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    width: 30%;
+    background-color: #00A8E1;
+}
+
+.container_SerieTV_TopRated::-webkit-scrollbar{
+    display: none;
+}
+
+.subContainer_SerieTV_TopRated::-webkit-scrollbar{
+    height: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.subContainer_SerieTV_TopRated::-webkit-scrollbar-track{
+    display: none;
+}
+
+.subContainer_SerieTV_TopRated::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #00A8E1;
+}
+
 .container_InfoSeries .name_PopularSeries{
     font-size: 25px;
 }
@@ -393,17 +445,47 @@ button{
     overflow-y: scroll
 }
 
+.overview_PopularSeries::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.overview_PopularSeries::-webkit-scrollbar-track{
+    display: none;
+}
+
+.overview_PopularSeries::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #00A8E1;
+}
+
+.overview_TopRatedSeries::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.overview_TopRatedSeries::-webkit-scrollbar-track{
+    display: none;
+}
+
+.overview_TopRatedSeries::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #00A8E1;
+}
+
 footer{
     padding: 20px 0;
     display: flex;
     flex-direction: column;
     background: rgb(22,32,41);
     background: radial-gradient(circle, rgba(22,32,41,1) 0%, rgba(38,55,72,1) 100%);
+    gap: 20px;
 }
 
 footer .logo{
     align-self: center;
-    padding: 0 0 15px 0;
     font-weight: bold;
 }
 
@@ -420,3 +502,91 @@ footer .logo{
     padding: 10px 0;
     color: white;
 }
+
+ @media screen and (min-width: 768px) {
+
+    .menuHeaders{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .img_hero_Series {
+        height: 800px;
+        object-fit: cover;
+    }
+
+    .modal_PopularSeries{
+        width: 400px;
+    }
+
+    .containerSeries h2 {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    .containerSeries a {
+        font-size: 22px;
+        color: #00A8E1;
+    }
+
+    .img_popular_Series, 
+    .img_topRated_Series {
+        width: 180px;
+    }
+
+    .container_SerieTV_Popular::-webkit-scrollbar{
+        display: none;
+    }
+
+    .subContainer_SerieTV_Popular::-webkit-scrollbar{
+        height: 15px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .subContainer_SerieTV_Popular::-webkit-scrollbar-track{
+        display: none;
+    }
+
+    .subContainer_SerieTV_Popular::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        width: 30%;
+        background-color: #00A8E1;
+    }
+
+    .container_SerieTV_TopRated::-webkit-scrollbar{
+        display: none;
+    }
+
+    .subContainer_SerieTV_TopRated::-webkit-scrollbar{
+        height: 15px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .subContainer_SerieTV_TopRated::-webkit-scrollbar-track{
+        display: none;
+    }
+
+    .subContainer_SerieTV_TopRated::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #00A8E1;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sitemap ul {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 70px;
+    }
+
+ }

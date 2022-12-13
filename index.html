@@ -16,75 +16,77 @@
 <body>
     <section class="header">
         <div class="container_Header">
-            <a href="http://127.0.0.1:5500/index.html"><span class="logo">PrimeFlix</span></a>
-            <div class="esplora_Container">
-                <button class="esplora_Btn">
-                    <span class="text_Btn">Esplora</span>
-                    <i class="fa-solid fa-caret-down arrow_Btn"></i>
-                </button>
-            </div>
-            <div class="menu_Container">
-                <nav class="nav_Menu">
-                    <ul class="ul_Menu">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Store</a></li>
-                        <li><a href="">Canali</a></li>
-                        <li class="category_Menu">
-                            <div class="container_Categoty_Btn">
-                                <button class="category_Btn">
-                                    <span>Categorie</span>
-                                    <i class="fa-solid fa-caret-down arrowDown_Btn_Category"></i>
-                                </button>
-                                <button class="arrowUp_Btn_Category"><i class="fa-solid fa-caret-up"></i></button>
-                            </div>
-                            <nav class="subMenu_Category">
-                                <ul class="subUl_Main_Category">
-                                    <h5>Categorie principali</h5>
-                                    <li><a href="">Incluso con Primeflix</a></li>
-                                    <li><a href="">Primeflix Exclusive</a></li>
-                                    <li><a href="">Film</a></li>
-                                    <li><a href="">Serie TV</a></li>
-                                    <li><a href="">Bambini</a></li>
-                                    <li><a href="">Sport</a></li>
-                                </ul>
-                                <ul class="subUl_Main_Genres">
-                                    <h5>Generi</h5>
-                                    <li><a href="">Azione e avventura</a></li>
-                                    <li><a href="">Commedia</a></li>
-                                    <li><a href="">Drammatici</a></li>
-                                    <li><a href="">Documentari</a></li>
-                                    <li><a href="">Bambini e famiglie</a></li>
-                                    <li><a href="">Fantasy</a></li>
-                                    <li><a href="">Horror</a></li>
-                                    <li><a href="">Romantici</a></li>
-                                    <li><a href="">Fantascienza</a></li>
-                                    <li><a href="">Suspence</a></li>
-                                    <li><a href="">Anime</a></li>
-                                    <li><a href="">Guerra</a></li>
-                                    <li><a href="">Sport</a></li>
-                                    <li><a href="">Polizieschi</a></li>
-                                </ul>
-                            </nav> 
-                        </li>
-                        <li><a href="">Area Personale</a></li>
+            <a href="./index.html"><span class="logo">PrimeFlix</span></a>
+            <div class="menuHeaders">
+                <div class="esplora_Container">
+                    <button class="esplora_Btn">
+                        <span class="text_Btn">Esplora</span>
+                        <i class="fa-solid fa-caret-down arrow_Btn"></i>
+                    </button>
+                </div>
+                <div class="menu_Container">
+                    <nav class="nav_Menu">
+                        <ul class="ul_Menu">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Store</a></li>
+                            <li><a href="">Canali</a></li>
+                            <li class="category_Menu">
+                                <div class="container_Categoty_Btn">
+                                    <button class="category_Btn">
+                                        <span>Categorie</span>
+                                        <i class="fa-solid fa-caret-down arrowDown_Btn_Category"></i>
+                                    </button>
+                                    <button class="arrowUp_Btn_Category"><i class="fa-solid fa-caret-up"></i></button>
+                                </div>
+                                <nav class="subMenu_Category">
+                                    <ul class="subUl_Main_Category">
+                                        <h5>Categorie principali</h5>
+                                        <li><a href="">Incluso con Primeflix</a></li>
+                                        <li><a href="">Primeflix Exclusive</a></li>
+                                        <li><a href="">Film</a></li>
+                                        <li><a href="">Serie TV</a></li>
+                                        <li><a href="">Bambini</a></li>
+                                        <li><a href="">Sport</a></li>
+                                    </ul>
+                                    <ul class="subUl_Main_Genres">
+                                        <h5>Generi</h5>
+                                        <li><a href="">Azione e avventura</a></li>
+                                        <li><a href="">Commedia</a></li>
+                                        <li><a href="">Drammatici</a></li>
+                                        <li><a href="">Documentari</a></li>
+                                        <li><a href="">Bambini e famiglie</a></li>
+                                        <li><a href="">Fantasy</a></li>
+                                        <li><a href="">Horror</a></li>
+                                        <li><a href="">Romantici</a></li>
+                                        <li><a href="">Fantascienza</a></li>
+                                        <li><a href="">Suspence</a></li>
+                                        <li><a href="">Anime</a></li>
+                                        <li><a href="">Guerra</a></li>
+                                        <li><a href="">Sport</a></li>
+                                        <li><a href="">Polizieschi</a></li>
+                                    </ul>
+                                </nav> 
+                            </li>
+                            <li><a href="">Area Personale</a></li>
+                        </ul>
+                    </nav>
+                    <button class="btn_Close_Menu"><i class="fa-solid fa-circle-xmark"></i></button>
+                </div>
+                <div class="container_Search">
+                    <button class=" btn_Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" required autocomplete="off" placeholder="Cerca" class="search_Bar">
+                    <button class="btn_Close_Search"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="container_Account">
+                    <button class="btn_Account"><i class="fa-solid fa-circle-user"></i></button>
+                </div>
+                <div class="menu_Account">
+                    <button class="btn_Close_Menu_Account"><i class="fa-solid fa-circle-xmark"></i></button>
+                    <ul class="ul_menu_Account">
+                        <button class="btn_Access">Accedi</button>
+                        <button class="btn_Signup">Iscriviti</button>
                     </ul>
-                </nav>
-                <button class="btn_Close_Menu"><i class="fa-solid fa-circle-xmark"></i></button>
-            </div>
-            <div class="container_Search">
-                <button class=" btn_Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input type="text" required autocomplete="off" placeholder="Cerca" class="search_Bar">
-                <button class="btn_Close_Search"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="container_Account">
-                <button class="btn_Account"><i class="fa-solid fa-circle-user"></i></button>
-            </div>
-            <div class="menu_Account">
-                <button class="btn_Close_Menu_Account"><i class="fa-solid fa-circle-xmark"></i></button>
-                <ul class="ul_menu_Account">
-                    <a href="">Accedi</a>
-                    <a href="">Iscriviti</a>
-                </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -120,9 +122,10 @@
                 <li><a href="#">Invia commenti</a></li>
                 <li><a href="#">Aiuto</a></li>
                 <li><a href="#">Informativa sui cookie</a></li>
-                <li class="author">Made with ❤️ by Giulio Simone Floresta</li>
+                
             </ul>
         </div>
+        <span class="author">Made with ❤️ by Giulio Simone Floresta</span>
     </footer>
     <script src="./script.js" type="module"></script>
 </body>
