@@ -1,0 +1,56 @@
+.container_SeriesTV{
+    width: 90%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.linkHome{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.image_SeriesTV{
+    width: 100%;
+}
+
+.info_SeriesTV{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.container_InfoEpisodes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form_Season{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 15px 0;
+}
+
+.numSeason{
+    width: 180px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn_FormSeason{
+    font-size: 21px;
+    color: white;
+    padding: 5px;
+}
