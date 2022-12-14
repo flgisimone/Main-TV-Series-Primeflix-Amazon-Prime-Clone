@@ -476,15 +476,21 @@ button{
     background-color: #00A8E1;
 }
 
-.rated_Form{
+.rated_Form {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
 }
 
 .btn_Rated{
     display: none;
+    background-color: white;
+}
+
+.rate{
+    font-size: 20px;
 }
 
 .rateSeries{

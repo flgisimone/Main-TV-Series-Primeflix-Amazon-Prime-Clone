@@ -360,6 +360,7 @@ const password = document.querySelector(".password")
 const send_Login = document.querySelector(".send_Login")
 const btn_Close_Login = document.querySelector(".btn_Close_Login")
 
+
 btn_Access.addEventListener("click", () => {
     modal_Login.style = "display: flex";
     menu_Account.style = "display: none";
@@ -380,33 +381,36 @@ login_Form.addEventListener("click", (e) => {
         pass: element_login.password.value
     }
 
-    localStorage.setItem("username", element_login.username.value);
-    localStorage.setItem("password", element_login.password.value);
+    //localStorage.setItem("username", element_login.username.value);
+    //localStorage.setItem("password", element_login.password.value);
 
     if(data.user === "prova" && data.pass === "prova"){
+
+        //const img_profile = document.createElement("img")
+
         modal_Login.style = "display: none"
         rateSeries.style = "display: block";
         btn_Rated.style = "display: block"
     } else {
         
     }
-
-
+    
 })
 
 //RATED
+const rate = document.querySelector(".rate")
 const rated_Form = document.forms.rated_Form
 const element_rated_Form = rated_Form.elements
 
-rated_Form.addEventListener("click", (e) => {
+rated_Form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const data = {
-        rated: element_rated_Form.option.value
+        rated: element_rated_Form[0].value
     }
 
-    console.log(data)
+    rate.textContent = "Hai dato un voto di " + data.rated + " su 10"; 
+
+    rated_Form.append(rateSeries, btn_Rated, rate);
 
 })
-
-rated_Form.append(rateSeries, btn_Rated)
