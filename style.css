@@ -155,7 +155,12 @@ button{
     font-size: 25px;
     color: white;
     padding: 5px;
+    display: flex;
+}
 
+.img_profile{
+    width: 25px;
+    border-radius: 50%;
 }
 
 .container_Search{
@@ -200,10 +205,15 @@ button{
     padding: 5px;
 }
 
-.btn_Access,
+.btn_Login,
+.btn_Logout,
 .btn_Signup{
     color: white;
     font-size: 20px;
+}
+
+.btn_Logout{
+    display: none;
 }
 
 .img_hero_Series{
@@ -531,7 +541,7 @@ button{
     right: 0;
 }
 
-.modal_Login span{
+.modal_Login h3{
     font-size: 30px;
     color: white;
 }
@@ -551,6 +561,12 @@ button{
     border: none;
 }
 
+.user_Notfound{
+    text-decoration: underline;
+    font-size: 22px;
+    color: white;
+}
+
 .send_Login,
 .btn_Rated{
     align-self: center;
@@ -561,8 +577,6 @@ button{
     cursor: pointer;
     color:#152836;
 }
-
-
 
 footer{
     padding: 20px 0;

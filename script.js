@@ -352,7 +352,7 @@ const topRated_TVSeries = (data) =>{
 }
 
 //LOGIN
-const btn_Access = document.querySelector(".btn_Access")
+const btn_Login = document.querySelector(".btn_Login")
 const modal_Login = document.querySelector(".modal_Login")
 const form_Login = document.querySelector(".form_Login")
 const username = document.querySelector(".username")
@@ -361,7 +361,7 @@ const send_Login = document.querySelector(".send_Login")
 const btn_Close_Login = document.querySelector(".btn_Close_Login")
 
 
-btn_Access.addEventListener("click", () => {
+btn_Login.addEventListener("click", () => {
     modal_Login.style = "display: flex";
     menu_Account.style = "display: none";
 })
@@ -373,7 +373,7 @@ btn_Close_Login.addEventListener("click", () => {
 const login_Form = document.forms.form_Login 
 const element_login = login_Form.elements
 
-login_Form.addEventListener("click", (e) => {
+login_Form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const data = {
@@ -386,15 +386,27 @@ login_Form.addEventListener("click", (e) => {
 
     if(data.user === "prova" && data.pass === "prova"){
 
-        //const img_profile = document.createElement("img")
+        const img_profile = document.createElement("img");
+        const btn_Logout = document.querySelector(".btn_Logout")
 
-        modal_Login.style = "display: none"
+        img_profile.setAttribute("src", "./assets/userIcon.png");
+        img_profile.className = "img_profile";
+
+        btn_Account.replaceChildren(img_profile);
+        btn_Login.replaceWith(btn_Logout);
+
+        btn_Logout.style = "display: block";
+        modal_Login.style = "display: none";
         rateSeries.style = "display: block";
-        btn_Rated.style = "display: block"
+        btn_Rated.style = "display: block";
     } else {
-        
+
+        const user_Notfound = document.createElement("span");
+        user_Notfound.className = "user_Notfound";
+        user_Notfound.textContent = "Utente / Password errati";
+        modal_Login.append(user_Notfound)
     }
-    
+
 })
 
 //RATED
