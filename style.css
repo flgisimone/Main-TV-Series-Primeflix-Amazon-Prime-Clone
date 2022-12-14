@@ -191,6 +191,7 @@ button{
     display: flex;
     flex-direction: column;
     font-size: 20px;
+    align-items: flex-start;
 }
 
 .btn_Close_Menu_Account{
@@ -475,6 +476,88 @@ button{
     background-color: #00A8E1;
 }
 
+.rated_Form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn_Rated{
+    display: none;
+}
+
+.rateSeries{
+    width: 50px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    height: 36px;
+    display: none;
+}
+
+.modal_Login{
+    width: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 40px 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #152836;
+    border-radius: 10px;
+    display: none;
+}
+
+.modal_Login .btn_Close_Login{
+    color: white;
+    font-size: 25px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal_Login span{
+    font-size: 30px;
+    color: white;
+}
+
+.form_Login{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.username,
+.password{
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.send_Login,
+.btn_Rated{
+    align-self: center;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 3px 15px;
+    border: none;
+    cursor: pointer;
+    color:#152836;
+}
+
+
+
 footer{
     padding: 20px 0;
     display: flex;
@@ -508,6 +591,11 @@ footer .logo{
     .menuHeaders{
         display: flex;
         align-items: center;
+        gap: 50px;
+    }
+
+    .subMenu_Category{
+        flex-direction: row;
         gap: 50px;
     }
 

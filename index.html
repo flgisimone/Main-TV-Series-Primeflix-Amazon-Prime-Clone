@@ -48,6 +48,7 @@
                                         <li><a href="">Bambini</a></li>
                                         <li><a href="">Sport</a></li>
                                     </ul>
+                                    <hr class="separator_MenuCategory">
                                     <ul class="subUl_Main_Genres">
                                         <h5>Generi</h5>
                                         <li><a href="">Azione e avventura</a></li>
@@ -113,6 +114,34 @@
             <div class="container_modal_InfoSeries">
             </div>
         </div>
+        <div class="rateSeries_Select">
+            <form name="rated_Form" class="rated_Form">
+                <select name="rateSeries" id="rateSeries" class="rateSeries">
+                    <option value="-">-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="submit" name="btn_Rated" value="Vota!" class="btn_Rated">
+            </form>
+            
+        </div>
+        <div class="modal_Login">
+            <button class="btn_Close_Login"><i class="fa-solid fa-circle-xmark"></i></button>
+            <span>Accedi</span>
+            <form name="form_Login" class="form_Login">
+                <input type="text" name="username" placeholder="Inserisci nome utente" class="username" required autocomplete="off">
+                <input type="text" name="password" placeholder="Inserisci password" class="password" required autocomplete="off">
+                <input type="submit" value="Invia" class="send_Login">
+            </form>
+        </di>
     </section>
     <footer>
         <span class="logo">PrimeFlix</span>
@@ -121,8 +150,7 @@
                 <li><a href="#">Termini e informazioni di utilizzo</a></li>
                 <li><a href="#">Invia commenti</a></li>
                 <li><a href="#">Aiuto</a></li>
-                <li><a href="#">Informativa sui cookie</a></li>
-                
+                <li><a href="#">Informativa sui cookie</a></li>     
             </ul>
         </div>
         <span class="author">Made with ❤️ by Giulio Simone Floresta</span>

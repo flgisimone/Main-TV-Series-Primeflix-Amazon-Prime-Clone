@@ -1,5 +1,7 @@
 const html = document.querySelector("html")
 const body = document.querySelector("body")
+const rateSeries = document.querySelector(".rateSeries")
+const btn_Rated = document.querySelector(".btn_Rated")
 
 //MENU RESPONSIVE
 const header = document.querySelector(".header");
@@ -96,8 +98,8 @@ modal_PopularSeries.append(btnCloseModal_PopularSeries)
 
 btnModal_PopularSeries.addEventListener("click", () => {
     modal_PopularSeries.style = "display: flex";
-    body.style = "overflow-y: hidden"
-    btnCloseModal_PopularSeries = "display: block";
+    body.style = "overflow-y: hidden";
+    btnCloseModal_PopularSeries.style = "display: block";
 })
 
 btnCloseModal_PopularSeries.addEventListener("click", () => {
@@ -159,7 +161,7 @@ const HERO_SerieTv = (data) =>{
 
     text_Play.append(btn_Play)
     container_Play.append(text_Play)
-    container_InfoModal.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play)
+    container_InfoModal.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play,rated_Form)
     modal_PopularSeries.append(container_InfoModal)
     
 }
@@ -243,7 +245,7 @@ const popular_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play,rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
                 
         })
@@ -254,7 +256,7 @@ const popular_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play,rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
         })
 
@@ -316,6 +318,7 @@ const topRated_TVSeries = (data) =>{
         text_Play.className = "text_Play"
         btn_Play.className = "fa-solid fa-play btn_Play"
 
+
         name_TopRatedSeries.textContent = data.results[i].name
         overview_TopRatedSeries.textContent = data.results[i].overview
         voteAverage_TopRatedSeries.textContent = "Valutazione media: " + data.results[i].vote_average + "/10"
@@ -332,7 +335,7 @@ const topRated_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play,rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
         })
 
@@ -342,9 +345,68 @@ const topRated_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play,rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
         })
     }
 }
 
+//LOGIN
+const btn_Access = document.querySelector(".btn_Access")
+const modal_Login = document.querySelector(".modal_Login")
+const form_Login = document.querySelector(".form_Login")
+const username = document.querySelector(".username")
+const password = document.querySelector(".password")
+const send_Login = document.querySelector(".send_Login")
+const btn_Close_Login = document.querySelector(".btn_Close_Login")
+
+btn_Access.addEventListener("click", () => {
+    modal_Login.style = "display: flex";
+    menu_Account.style = "display: none";
+})
+
+btn_Close_Login.addEventListener("click", () => {
+    modal_Login.style = "display: none"
+})
+
+const login_Form = document.forms.form_Login 
+const element_login = login_Form.elements
+
+login_Form.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const data = {
+        user: element_login.username.value,
+        pass: element_login.password.value
+    }
+
+    localStorage.setItem("username", element_login.username.value);
+    localStorage.setItem("password", element_login.password.value);
+
+    if(data.user === "prova" && data.pass === "prova"){
+        modal_Login.style = "display: none"
+        rateSeries.style = "display: block";
+        btn_Rated.style = "display: block"
+    } else {
+        
+    }
+
+
+})
+
+//RATED
+const rated_Form = document.forms.rated_Form
+const element_rated_Form = rated_Form.elements
+
+rated_Form.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const data = {
+        rated: element_rated_Form.option.value
+    }
+
+    console.log(data)
+
+})
+
+rated_Form.append(rateSeries, btn_Rated)

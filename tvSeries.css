@@ -1,3 +1,13 @@
+.menu_Container{
+    width: 90%;
+    margin: auto;
+    padding: 0 0 20px 0;
+    font-size: 20px;
+    display: none;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
 .container_SeriesTV{
     width: 90%;
     margin: auto;
