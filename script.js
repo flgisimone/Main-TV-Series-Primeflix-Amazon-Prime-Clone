@@ -242,6 +242,8 @@ const popular_TVSeries = (data) =>{
         overview_PopularSeries.textContent = data.results[i].overview;
         if(overview_PopularSeries.outerHTML === "<p class=\"overview_PopularSeries\"></p>"){
             overview_PopularSeries.innerHTML = "DESCRIZIONE NON AGGIORNATA";
+            overview_PopularSeries.style = "height: 25px";
+            
         }
         voteAverage_PopularSeries.textContent = "Valutazione media: " + data.results[i].vote_average + "/10";
         voteCount_PopularSeries.textContent = "Totale valutazioni: " + data.results[i].vote_count;
@@ -333,7 +335,8 @@ const topRated_TVSeries = (data) =>{
         name_TopRatedSeries.textContent = data.results[i].name;
         overview_TopRatedSeries.textContent = data.results[i].overview;
         if(overview_TopRatedSeries.outerHTML === "<p class=\"overview_TopRatedSeries\"></p>"){
-                overview_TopRatedSeries.innerHTML = "DESCRIZIONE NON AGGIORNATA";
+            overview_TopRatedSeries.style = "height: 25px";
+            overview_TopRatedSeries.innerHTML = "DESCRIZIONE NON AGGIORNATA";
         }
         voteAverage_TopRatedSeries.textContent = "Valutazione media: " + data.results[i].vote_average + "/10";
         voteCount_TopRatedSeries.textContent = "Totale valutazioni: " + data.results[i].vote_count;

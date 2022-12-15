@@ -622,6 +622,11 @@ footer .logo{
         object-fit: cover;
     }
 
+    .btnModal_PopularSeries{
+        font-size: 120px;
+        padding: 0 50px;
+    }
+
     .modal_PopularSeries{
         width: 400px;
     }
@@ -632,7 +637,7 @@ footer .logo{
     }
 
     .containerSeries a {
-        font-size: 22px;
+        font-size: 20px;
         color: #00A8E1;
     }
 

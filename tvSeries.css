@@ -8,6 +8,11 @@
     justify-content: space-between;
 }
 
+.season{
+    color: white;
+    font-size: 30px;
+}
+
 .container_SeriesTV{
     width: 90%;
     margin: auto;
@@ -64,3 +69,31 @@
     color: white;
     padding: 5px;
 }
+ @media screen and (min-width: 768px) {
+
+    .linkHome{
+        margin: 30px 0;
+    }
+
+    .info_SeriesTV{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cardEpisodes{
+        width: 400px;
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .image_SeriesTV{
+        width: 380px;
+        border-radius: 10px;
+    }
+
+    .separatorCard{
+        display: none;
+    }
+ }
