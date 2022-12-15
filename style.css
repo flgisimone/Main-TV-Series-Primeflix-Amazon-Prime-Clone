@@ -448,9 +448,7 @@ button{
 
 .overview_PopularSeries,
 .overview_TopRatedSeries{
-    border: 1px solid white;
-    padding: 10px 15px;
-    border-radius: 10px;
+
     height: 150px;;
     overflow-y: hidden;
     overflow-y: scroll
