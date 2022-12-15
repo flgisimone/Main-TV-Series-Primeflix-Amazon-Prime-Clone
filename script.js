@@ -456,12 +456,19 @@ const element_rated_Form = rated_Form.elements;
 rated_Form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const data = {
-        rated: element_rated_Form[0].value
-    }
+        const data = {
+            rated: element_rated_Form[0].value
+        }
+        rate.textContent = "Hai dato un voto di " + data.rated + " su 10"; 
+    
+        rated_Form.append(rateSeries, btn_Rated, rate);
 
-    rate.textContent = "Hai dato un voto di " + data.rated + " su 10"; 
+        btnCloseModal_PopularSeries.addEventListener("click", (e) => {
 
-    rated_Form.append(rateSeries, btn_Rated, rate);
+            e.preventDefault();
+            element_rated_Form[0].value = "-";
+            rate.textContent = ""; 
+        })
 
 })
+
