@@ -1,3 +1,4 @@
+
 const html = document.querySelector("html")
 const body = document.querySelector("body")
 const rateSeries = document.querySelector(".rateSeries")
@@ -161,8 +162,13 @@ const HERO_SerieTv = (data) =>{
 
     text_Play.append(btn_Play)
     container_Play.append(text_Play)
-    container_InfoModal.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play,rated_Form)
+    container_InfoModal.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, rated_Form)
     modal_PopularSeries.append(container_InfoModal)
+
+    btnModal_PopularSeries.addEventListener("click", () => {
+        container_InfoModal.append(rated_Form)
+
+    })
     
 }
 //FINE HERO
@@ -245,7 +251,7 @@ const popular_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play,rated_Form)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play, rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
                 
         })
@@ -256,7 +262,7 @@ const popular_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play,rated_Form)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play, rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
         })
 
@@ -318,7 +324,6 @@ const topRated_TVSeries = (data) =>{
         text_Play.className = "text_Play"
         btn_Play.className = "fa-solid fa-play btn_Play"
 
-
         name_TopRatedSeries.textContent = data.results[i].name
         overview_TopRatedSeries.textContent = data.results[i].overview
         voteAverage_TopRatedSeries.textContent = "Valutazione media: " + data.results[i].vote_average + "/10"
@@ -335,7 +340,7 @@ const topRated_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play,rated_Form)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play, rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
         })
 
@@ -345,7 +350,7 @@ const topRated_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex"
             body.style = "overflow-y: hidden"
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play,rated_Form)
+            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play, rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
         })
     }
@@ -360,7 +365,6 @@ const password = document.querySelector(".password")
 const send_Login = document.querySelector(".send_Login")
 const btn_Close_Login = document.querySelector(".btn_Close_Login")
 
-
 btn_Login.addEventListener("click", () => {
     modal_Login.style = "display: flex";
     menu_Account.style = "display: none";
@@ -372,6 +376,26 @@ btn_Close_Login.addEventListener("click", () => {
 
 const login_Form = document.forms.form_Login 
 const element_login = login_Form.elements
+const img_profile = document.createElement("img");
+const btn_Logout = document.querySelector(".btn_Logout")
+
+img_profile.setAttribute("src", "./assets/userIcon.png");
+img_profile.className = "img_profile";
+
+//FUNZIONA LOCAL STORAGE
+/*
+const init_LocalStorage = () =>{
+    const data = {
+        user: element_login.username.value,
+        pass: element_login.password.value
+    }
+
+    //localStorage.setItem('loginData', JSON.stringify(data));
+    //JSON.parse(localStorage.getItem('loginData'));
+
+    return data;
+}*/
+
 
 login_Form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -380,27 +404,24 @@ login_Form.addEventListener("submit", (e) => {
         user: element_login.username.value,
         pass: element_login.password.value
     }
-
-    //localStorage.setItem("username", element_login.username.value);
-    //localStorage.setItem("password", element_login.password.value);
+    
+    //console.log(data)
+    //localStorage.removeItem('loginData');
 
     if(data.user === "prova" && data.pass === "prova"){
 
-        const img_profile = document.createElement("img");
-        const btn_Logout = document.querySelector(".btn_Logout")
-
-        img_profile.setAttribute("src", "./assets/userIcon.png");
-        img_profile.className = "img_profile";
+        localStorage.setItem('loginData', JSON.stringify(data));
+        JSON.parse(localStorage.getItem('loginData'));
+        window.onload = JSON.parse(localStorage.getItem('loginData'));
 
         btn_Account.replaceChildren(img_profile);
         btn_Login.replaceWith(btn_Logout);
-
         btn_Logout.style = "display: block";
         modal_Login.style = "display: none";
         rateSeries.style = "display: block";
         btn_Rated.style = "display: block";
-    } else {
 
+    } else {
         const user_Notfound = document.createElement("span");
         user_Notfound.className = "user_Notfound";
         user_Notfound.textContent = "Utente / Password errati";
@@ -408,6 +429,12 @@ login_Form.addEventListener("submit", (e) => {
     }
 
 })
+
+btn_Logout.addEventListener("click", () => {
+    localStorage.removeItem('loginData');
+    location.reload();
+})
+
 
 //RATED
 const rate = document.querySelector(".rate")
