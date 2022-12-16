@@ -2,6 +2,37 @@ const body = document.querySelector("body");
 const main = document.querySelector(".main")
 const rateSeries = document.querySelector(".rateSeries");
 const btn_Rated = document.querySelector(".btn_Rated");
+/*
+window.addEventListener("load", () => {
+
+    JSON.parse(localStorage.getItem('loginData'));
+
+    btn_Account.replaceChildren(img_profile);
+    btn_Login.replaceWith(btn_Logout);
+    btn_Logout.style = "display: block";
+    modal_Login.style = "display: none";
+    rateSeries.style = "display: block";
+    btn_Rated.style = "display: block";
+
+})*/
+
+
+
+
+/*btn_Logout.addEventListener("click", () => {
+    localStorage.removeItem('loginData');
+    const img_profile = document.querySelector("img");
+    const btn_Account = document.querySelector(".btn_Account");  
+    //img_profile.replaceChildren(btn_Account);
+    console.log(btn_Account)
+    btn_Logout.replaceWith(btn_Login);
+    btn_Logout.style = "display: none";
+    modal_Login.style = "display: none";
+    rateSeries.style = "display: none";
+    btn_Rated.style = "display: none";
+    data.user = "";
+
+})*/
 
 //MENU RESPONSIVE
 const header = document.querySelector(".header");
@@ -284,6 +315,8 @@ const popular_TVSeries = (data) =>{
     container_modal_InfoSeries.append(modal_InfoSeries);
 }
 
+
+
 //SEZIONE SERIE TV PIU' VOTATE
 const url_TopRated_TVSeries = "https://api.themoviedb.org/3/tv/top_rated?api_key=735bb0297a3005a4acf5d01890f3249f&language=it&page=1";
 const serieTV_TopRated = document.querySelector(".serieTV_TopRated");
@@ -447,6 +480,7 @@ btn_Logout.addEventListener("click", () => {
 })
 
 
+
 //RATED
 const rate = document.querySelector(".rate");
 const rated_Form = document.forms.rated_Form;
@@ -470,3 +504,26 @@ rated_Form.addEventListener("submit", (e) => {
         })
 
 })
+
+search_Bar.addEventListener("click", () => {
+    window.alert("Senza soldi non si canta messa")
+})
+
+const btn_Signup = document.querySelector(".btn_Signup")
+btn_Signup.addEventListener("click", () => {
+    window.alert("Senza soldi non si canta messa")
+})
+
+const genres_menu = document.querySelectorAll(".genres_menu")
+for (let i = 0; i < genres_menu.length; i++) {
+    genres_menu[i].addEventListener("click", () => {
+        window.alert("Senza soldi non si canta messa")
+    })
+}
+
+const discover_More = document.querySelectorAll(".discover_More")
+for (let i = 0; i < discover_More.length; i++) {
+    discover_More[i].addEventListener("click", () => {
+        window.alert("Senza soldi non si canta messa")
+    })
+}

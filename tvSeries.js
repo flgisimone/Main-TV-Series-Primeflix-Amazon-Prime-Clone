@@ -139,3 +139,34 @@ btn_Logout.addEventListener("click", () => {
     localStorage.removeItem('loginData');
     location.reload();
 })
+
+const btn_FormSeason = document.querySelector(".btn_FormSeason")
+btn_FormSeason.addEventListener("click", () => {
+    window.alert("Senza soldi non si canta messa")
+})
+
+const btn_Signup = document.querySelector(".btn_Signup")
+btn_Signup.addEventListener("click", () => {
+    window.alert("Senza soldi non si canta messa")
+})
+
+const search_Bar = document.querySelector(".search_Bar")
+search_Bar.addEventListener("click", () => {
+    window.alert("Senza soldi non si canta messa")
+})
+
+const genres_menu = document.querySelectorAll(".genres_menu")
+
+for (let i = 0; i < genres_menu.length; i++) {
+    genres_menu[i].addEventListener("click", () => {
+        window.alert("Senza soldi non si canta messa")
+    })
+}
+
+const discover_More = document.querySelectorAll(".discover_More")
+
+for (let i = 0; i < discover_More.length; i++) {
+    discover_More[i].addEventListener("click", () => {
+        window.alert("Senza soldi non si canta messa")
+    })
+}
