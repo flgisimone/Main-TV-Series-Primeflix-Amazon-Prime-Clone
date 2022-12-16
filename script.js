@@ -432,7 +432,6 @@ login_Form.addEventListener("submit", (e) => {
         btn_Rated.style = "display: block";
         container_modalLogin.style = "display: none";
         body.style = "overflox-y: none";
-
     } else {
         const user_Notfound = document.createElement("span");
         user_Notfound.className = "user_Notfound";
