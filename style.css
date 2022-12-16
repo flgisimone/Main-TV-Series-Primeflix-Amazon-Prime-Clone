@@ -227,7 +227,7 @@ button{
 
 .modal_PopularSeries{
     display: none;
-    width: 90%;
+    width: 300px;
     border-radius: 10px;
     background-color: #152836;
     position: fixed;
@@ -604,6 +604,16 @@ footer .logo{
     color: white;
 }
 
+.container_modal_PopularSeries{
+    display: none;
+    padding: 100%;
+    background-color: rgba(0, 0, 0, 0.815);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
  @media screen and (min-width: 768px) {
 
     .menuHeaders{
@@ -628,7 +638,7 @@ footer .logo{
     }
 
     .modal_PopularSeries{
-        width: 400px;
+        width: 500px;
     }
 
     .containerSeries h2 {
@@ -685,6 +695,10 @@ footer .logo{
         background-color: #00A8E1;
     }
 
+    .modal_InfoSeries{
+        width: 500px;
+    }
+
     footer{
         display: flex;
         flex-direction: column;
@@ -698,6 +712,7 @@ footer .logo{
         flex-direction: row;
         justify-content: center;
         gap: 70px;
+        align-items: center;
     }
 
  }

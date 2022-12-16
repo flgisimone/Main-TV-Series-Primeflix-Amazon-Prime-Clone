@@ -1,6 +1,5 @@
-
-const html = document.querySelector("html");
 const body = document.querySelector("body");
+const main = document.querySelector(".main")
 const rateSeries = document.querySelector(".rateSeries");
 const btn_Rated = document.querySelector(".btn_Rated");
 
@@ -80,36 +79,41 @@ btn_Close_Menu_Account.addEventListener("click", () => {
 //HERO
 const url_popularSeries = "https://api.themoviedb.org/3/tv/popular?api_key=735bb0297a3005a4acf5d01890f3249f&language=it";
 const container_Hero = document.querySelector(".container_Hero");
-
+const container_modal_PopularSeries = document.createElement("div");
 const modal_PopularSeries = document.createElement("div");
 const btnModal_PopularSeries = document.createElement("button");
-const btnCloseModal_PopularSeries = document.createElement("button");
+const btnCloseModal = document.createElement("button");
 const iconModalBtn = document.createElement("i");
 const iconCloseModalBtn = document.createElement("i");
 
+container_modal_PopularSeries.className = "container_modal_PopularSeries";
 modal_PopularSeries.className = "modal_PopularSeries";
 btnModal_PopularSeries.className = "btnModal_PopularSeries";
-btnCloseModal_PopularSeries.className =".btnCloseModal_PopularSeries";
+btnCloseModal.className =".btnCloseModal";
 iconModalBtn.className = "fa-solid fa-play";
 iconCloseModalBtn.className = "fa-solid fa-circle-xmark iconCloseModalBtn";
 
 btnModal_PopularSeries.append(iconModalBtn);
-btnCloseModal_PopularSeries.append(iconCloseModalBtn);
-modal_PopularSeries.append(btnCloseModal_PopularSeries);
+btnCloseModal.append(iconCloseModalBtn);
+modal_PopularSeries.append(btnCloseModal);
 
 btnModal_PopularSeries.addEventListener("click", () => {
     modal_PopularSeries.style = "display: flex";
     body.style = "overflow-y: hidden";
-    btnCloseModal_PopularSeries.style = "display: block";
+    btnCloseModal.style = "display: block";
+    container_modal_PopularSeries.append(modal_PopularSeries)
+    body.append(container_modal_PopularSeries)
+    container_modal_PopularSeries.style = "display: flex";
 })
 
-btnCloseModal_PopularSeries.addEventListener("click", () => {
+btnCloseModal.addEventListener("click", () => {
     modal_PopularSeries.style = "display: none";
     body.style = "overflow-y: none";
     btnModal_PopularSeries.append(iconModalBtn);
-    btnCloseModal_PopularSeries.append(iconCloseModalBtn);
-    modal_PopularSeries.append(btnCloseModal_PopularSeries);
+    btnCloseModal.append(iconCloseModalBtn);
+    modal_PopularSeries.append(btnCloseModal);
     container_modal_InfoSeries.style = "display: none";
+    container_modal_PopularSeries.style = "display: none";
 })
 
 fetch(url_popularSeries)
@@ -165,7 +169,7 @@ const HERO_SerieTv = (data) =>{
 
     text_Play.append(btn_Play);
     container_Play.append(text_Play);
-    container_InfoModal.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, rated_Form);
+    container_InfoModal.append(btnCloseModal, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, rated_Form);
     modal_PopularSeries.append(container_InfoModal);
 
     btnModal_PopularSeries.addEventListener("click", () => {
@@ -259,7 +263,7 @@ const popular_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex";
             body.style = "overflow-y: hidden";
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play, rated_Form)
+            container_InfoSeries.append(btnCloseModal, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play, rated_Form)
                 modal_InfoSeries.append(container_InfoSeries)
                 
         })
@@ -270,7 +274,7 @@ const popular_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex";
             body.style = "overflow-y: hidden";
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play, rated_Form);
+            container_InfoSeries.append(btnCloseModal, name_PopularSeries, overview_PopularSeries, voteAverage_PopularSeries, voteCount_PopularSeries, container_Play, container_Play, rated_Form);
                 modal_InfoSeries.append(container_InfoSeries);
         })
 
@@ -352,7 +356,7 @@ const topRated_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex";
             body.style = "overflow-y: hidden";
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play, rated_Form);
+            container_InfoSeries.append(btnCloseModal, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play, rated_Form);
                 modal_InfoSeries.append(container_InfoSeries);
         })
 
@@ -362,7 +366,7 @@ const topRated_TVSeries = (data) =>{
             modal_InfoSeries.style = "display: flex";
             body.style = "overflow-y: hidden";
             modal_InfoSeries.replaceChildren();
-            container_InfoSeries.append(btnCloseModal_PopularSeries, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play, rated_Form);
+            container_InfoSeries.append(btnCloseModal, name_TopRatedSeries, overview_TopRatedSeries, voteAverage_TopRatedSeries, voteCount_TopRatedSeries, container_Play, container_Play, rated_Form);
                 modal_InfoSeries.append(container_InfoSeries);
         })
     }
@@ -394,21 +398,6 @@ const btn_Logout = document.querySelector(".btn_Logout");;
 img_profile.setAttribute("src", "./assets/userIcon.png");
 img_profile.className = "img_profile";
 
-//FUNZIONA LOCAL STORAGE
-/*
-const init_LocalStorage = () =>{
-    const data = {
-        user: element_login.username.value,
-        pass: element_login.password.value
-    }
-
-    //localStorage.setItem('loginData', JSON.stringify(data));
-    //JSON.parse(localStorage.getItem('loginData'));
-
-    return data;
-}*/
-
-
 login_Form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -416,11 +405,8 @@ login_Form.addEventListener("submit", (e) => {
         user: element_login.username.value,
         pass: element_login.password.value
     }
-    
-    //console.log(data)
-    //localStorage.removeItem('loginData');
 
-    if(data.user === "prova" && data.pass === "prova"){
+    if(data.user === "edgemony" && data.pass === "codeweek"){
 
         localStorage.setItem('loginData', JSON.stringify(data));
         JSON.parse(localStorage.getItem('loginData'));
@@ -463,9 +449,9 @@ rated_Form.addEventListener("submit", (e) => {
     
         rated_Form.append(rateSeries, btn_Rated, rate);
 
-        btnCloseModal_PopularSeries.addEventListener("click", (e) => {
-
+        btnCloseModal.addEventListener("click", (e) => {
             e.preventDefault();
+
             element_rated_Form[0].value = "-";
             rate.textContent = ""; 
         })

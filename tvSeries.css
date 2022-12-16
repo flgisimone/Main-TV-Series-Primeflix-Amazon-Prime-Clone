@@ -9,6 +9,23 @@
 }
 
 .season{
+    width: 60px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn_FormSeason{
+    font-size: 21px;
+    color: white;
+    padding: 5px;
+}
+
+
+.textSeason{
     color: white;
     font-size: 30px;
 }
@@ -54,21 +71,6 @@
     margin: 0 0 15px 0;
 }
 
-.numSeason{
-    width: 180px;
-    height: 30px;
-    padding-left: 10px;
-    font-size: 15px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-}
-
-.btn_FormSeason{
-    font-size: 21px;
-    color: white;
-    padding: 5px;
-}
  @media screen and (min-width: 768px) {
 
     .linkHome{
