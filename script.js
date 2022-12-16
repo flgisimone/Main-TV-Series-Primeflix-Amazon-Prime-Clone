@@ -302,12 +302,12 @@ const topRated_TVSeries = (data) =>{
 
     for(let i = 0; i < 10; i++){
 
-        const card_TopRated = document.createElement("div");
+        const card_TopRated_Series = document.createElement("div");
         const img_topRated_Series = document.createElement("img");
         const btnInfo_topRated_TVSeries = document.createElement("button");
         const idSeries = data.results[i].id;
 
-        card_TopRated.className = "card_TopRated";
+        card_TopRated_Series.className = "card_TopRated_Series";
         img_topRated_Series.className = "img_topRated_Series";
         btnInfo_topRated_TVSeries.className = "btnInfo_topRated_TVSeries";
 
@@ -315,8 +315,8 @@ const topRated_TVSeries = (data) =>{
         img_topRated_Series.setAttribute("alt", data.results[i].name);
         btnInfo_topRated_TVSeries.textContent = "Maggiori dettagli";
 
-        card_TopRated.append(img_topRated_Series, btnInfo_topRated_TVSeries);
-        subContainer_SerieTV_TopRated.append(card_TopRated);
+        card_TopRated_Series.append(img_topRated_Series, btnInfo_topRated_TVSeries);
+        subContainer_SerieTV_TopRated.append(card_TopRated_Series);
         container_SerieTV_TopRated.append(subContainer_SerieTV_TopRated);
 
         //CARD MODALE
@@ -402,10 +402,10 @@ send_Login.addEventListener("submit", () => {
     container_modalLogin.style = "display: none";
 })
 
-const login_Form = document.forms.form_Login ;;
-const element_login = login_Form.elements;;
+const login_Form = document.forms.form_Login ;
+const element_login = login_Form.elements;
 const img_profile = document.createElement("img");
-const btn_Logout = document.querySelector(".btn_Logout");;
+const btn_Logout = document.querySelector(".btn_Logout");
 
 img_profile.setAttribute("src", "./assets/userIcon.png");
 img_profile.className = "img_profile";
@@ -470,4 +470,3 @@ rated_Form.addEventListener("submit", (e) => {
         })
 
 })
-

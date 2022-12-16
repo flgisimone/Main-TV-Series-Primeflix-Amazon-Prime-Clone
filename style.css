@@ -343,10 +343,11 @@ button{
 .subContainer_SerieTV_Popular,
 .subContainer_SerieTV_TopRated{
     display: flex;
+    justify-content: space-between;
     width: 100%;
     overflow-x: hidden;
     overflow-x: scroll;
-    gap: 10px;
+
     padding-bottom: 20px;
 }
 
