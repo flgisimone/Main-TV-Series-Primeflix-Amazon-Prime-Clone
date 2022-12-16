@@ -291,7 +291,10 @@ button{
 }
 
 .voteAverage_PopularSeries,
-.voteCount_PopularSeries{
+.voteCount_PopularSeries,
+.voteAverage_TopRatedSeries,
+.voteCount_TopRatedSeries
+{
     font-size: 20px;
 }
 
@@ -347,7 +350,7 @@ button{
     width: 100%;
     overflow-x: hidden;
     overflow-x: scroll;
-
+    gap: 10px;
     padding-bottom: 20px;
 }
 
@@ -461,7 +464,7 @@ button{
 
 .overview_PopularSeries,
 .overview_TopRatedSeries{
-    height: 150px;
+    max-height: 150px;
     overflow-y: hidden;
     overflow-y: scroll
 }
