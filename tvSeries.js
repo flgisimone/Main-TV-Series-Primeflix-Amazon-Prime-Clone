@@ -54,7 +54,7 @@ const seriesTV = (data) =>{
         image_SeriesTV.setAttribute("alt", "Locandina non aggiornata")
         name_SeriesTV.innerHTML = data.episodes[i].name
         overview_SeriesTV.innerHTML = data.episodes[i].overview
-        voteAverage_SeriesTV.innerHTML =  "Valutazione media: " + data.episodes[i].vote_average + "/10"
+        voteAverage_SeriesTV.innerHTML =  "Valutazione media: " + data.episodes[i].vote_average.toFixed() + "/10"
         voteCount_SeriesTV.innerHTML = "Valutazioni totali: " + data.episodes[i].vote_count
 
         container_InfoEpisodes.append(overview_SeriesTV, voteAverage_SeriesTV, voteCount_SeriesTV, separatorCard)

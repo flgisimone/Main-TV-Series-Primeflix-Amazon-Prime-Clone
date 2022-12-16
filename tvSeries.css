@@ -65,11 +65,10 @@
 }
 
 .overview_SeriesTV{
-    border: 1px solid white;
-    padding: 10px;
+    padding: 0px;
     margin: 10px 0;
     border-radius: 10px;
-    height: 150px;
+    max-height: 150px;
     overflow-x: hidden;
     overflow-x: scroll;
 }
@@ -134,6 +133,10 @@
     .image_SeriesTV{
         width: 380px;
         border-radius: 10px;
+    }
+
+    .overview_SeriesTV{
+        font-size: 16px;
     }
 
     .separatorCard{
