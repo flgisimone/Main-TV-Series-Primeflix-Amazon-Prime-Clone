@@ -460,8 +460,7 @@ button{
 
 .overview_PopularSeries,
 .overview_TopRatedSeries{
-
-    height: 150px;;
+    height: 150px;
     overflow-y: hidden;
     overflow-y: scroll
 }
@@ -666,6 +665,11 @@ footer .logo{
     .img_popular_Series, 
     .img_topRated_Series {
         width: 160px;
+    }
+
+    .overview_PopularSeries,
+    .overview_TopRatedSeries{
+        font-size: 18px;
     }
 
     .container_SerieTV_Popular::-webkit-scrollbar{

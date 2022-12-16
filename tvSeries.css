@@ -64,6 +64,37 @@
     gap: 10px;
 }
 
+.overview_SeriesTV{
+    border: 1px solid white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    height: 150px;
+    overflow-x: hidden;
+    overflow-x: scroll;
+}
+
+.container_InfoEpisodes::-webkit-scrollbar{
+    display: none;
+}
+
+.overview_SeriesTV::-webkit-scrollbar{
+    width: 10px;
+}
+
+.overview_SeriesTV::-webkit-scrollbar:horizontal{
+    display: none;
+}
+
+.overview_SeriesTV::-webkit-scrollbar-track{
+    display: none;
+}
+
+.overview_SeriesTV::-webkit-scrollbar-thumb:vertical{
+    border-radius: 10px;
+    background-color: #00A8E1;
+}
+
 .form_Season{
     display: flex;
     align-items: center;

@@ -398,6 +398,10 @@ btn_Close_Login.addEventListener("click", () => {
     body.style = "overflow-y: none";
 })
 
+send_Login.addEventListener("submit", () => {
+    container_modalLogin.style = "display: none";
+})
+
 const login_Form = document.forms.form_Login ;;
 const element_login = login_Form.elements;;
 const img_profile = document.createElement("img");
@@ -426,6 +430,8 @@ login_Form.addEventListener("submit", (e) => {
         modal_Login.style = "display: none";
         rateSeries.style = "display: block";
         btn_Rated.style = "display: block";
+        container_modalLogin.style = "display: none";
+        body.style = "overflox-y: none";
 
     } else {
         const user_Notfound = document.createElement("span");
