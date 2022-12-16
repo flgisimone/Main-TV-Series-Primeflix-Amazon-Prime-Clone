@@ -24,6 +24,7 @@ esplora_Btn.addEventListener("click", () => {
     esplora_Btn.style = "display: none";
     btn_Search.style = "display: none";
     menu_Container.style = "display: flex";
+    menu_Account.style = "display: none"
     header.append(menu_Container);
 })
 
@@ -51,6 +52,7 @@ btn_Search.addEventListener("click", () => {
     btn_Search.style = "display: none";
     esplora_Btn.style = "display: none";
     btn_Account.style = "display: none";
+    menu_Account.style = "display: none"
 })
 
 btn_Close_Search.addEventListener("click", () => {
@@ -373,21 +375,27 @@ const topRated_TVSeries = (data) =>{
 }
 
 //LOGIN
-const btn_Login = document.querySelector(".btn_Login");;
-const modal_Login = document.querySelector(".modal_Login");;
-const form_Login = document.querySelector(".form_Login");;
-const username = document.querySelector(".username");;
-const password = document.querySelector(".password");;
-const send_Login = document.querySelector(".send_Login");;
-const btn_Close_Login = document.querySelector(".btn_Close_Login");;
+const btn_Login = document.querySelector(".btn_Login");
+const container_modalLogin = document.querySelector(".container_modalLogin")
+const modal_Login = document.querySelector(".modal_Login");
+const form_Login = document.querySelector(".form_Login");
+const username = document.querySelector(".username");
+const password = document.querySelector(".password");
+const send_Login = document.querySelector(".send_Login");
+const btn_Close_Login = document.querySelector(".btn_Close_Login");
 
 btn_Login.addEventListener("click", () => {
     modal_Login.style = "display: flex";
     menu_Account.style = "display: none";
+    container_modalLogin.style = "display: block";
+    body.style = "overflow-y: hidden";
+    container_modalLogin.append(modal_Login)
 })
 
 btn_Close_Login.addEventListener("click", () => {
-    modal_Login.style = "display: none";;
+    modal_Login.style = "display: none";
+    container_modalLogin.style = "display: none";
+    body.style = "overflow-y: none";
 })
 
 const login_Form = document.forms.form_Login ;;

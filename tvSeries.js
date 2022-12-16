@@ -1,3 +1,6 @@
+const body = document.querySelector("body")
+const menu_Account = document.querySelector(".menu_Account");
+const btn_Account = document.querySelector(".btn_Account");
 const image_SeriesTV = document.querySelector(".image_SeriesTV")
 const name_SeriesTV = document.querySelector(".name_SeriesTV")
 const overview_SeriesTV = document.querySelector(".overview_SeriesTV")
@@ -9,10 +12,14 @@ const form_Season = document.querySelector(".form_Season")
 const numSeason = document.querySelector(".numSeason")
 const btnSend = document.querySelector(".btnSend")
 
+//const link_Season = document.createElement("a")
 
-//const url_TVSeries = "https://api.themoviedb.org/3/tv/popular?api_key=735bb0297a3005a4acf5d01890f3249f&language=it"
+//link_Season.setAttribute("href", `http://127.0.0.1:5500/tv-series.html?id=${idSeries}`)
+//link_Season.className = "link_Season"
+
 const url_TVSeries = `https://api.themoviedb.org/3/tv/${id}/season/1?api_key=735bb0297a3005a4acf5d01890f3249f&language=it`
-console.log(url_TVSeries)
+//const url_Season_TVSeries = `https://api.themoviedb.org/3/tv/${id}/season/${idseason}?api_key=735bb0297a3005a4acf5d01890f3249f&language=it`
+
 
 fetch(url_TVSeries)
 .then((res) => res.json())
@@ -56,3 +63,72 @@ const seriesTV = (data) =>{
     }
 
 }
+
+//LOGIN
+const container_modalLogin = document.querySelector(".container_modalLogin")
+const btn_Login = document.querySelector(".btn_Login");
+const modal_Login = document.querySelector(".modal_Login");
+const form_Login = document.querySelector(".form_Login");
+const username = document.querySelector(".username");
+const password = document.querySelector(".password");
+const send_Login = document.querySelector(".send_Login");
+const btn_Close_Login = document.querySelector(".btn_Close_Login");
+
+btn_Login.addEventListener("click", () => {
+    modal_Login.style = "display: flex";
+    menu_Account.style = "display: none";
+    container_modalLogin.style = "display: block";
+    container_modalLogin.append(modal_Login)
+    body.style = "overflow-y: hidden";
+    
+})
+
+btn_Close_Login.addEventListener("click", () => {
+    modal_Login.style = "display: none";
+    container_modalLogin.style = "display: none";
+    body.style = "overflow-y: none";
+})
+
+const login_Form = document.forms.form_Login ;
+const element_login = login_Form.elements;
+const img_profile = document.createElement("img");
+const btn_Logout = document.querySelector(".btn_Logout");
+
+img_profile.setAttribute("src", "./assets/userIcon.png");
+img_profile.className = "img_profile";
+
+login_Form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = {
+        user: element_login.username.value,
+        pass: element_login.password.value
+    }
+
+    if(data.user === "edgemony" && data.pass === "codeweek"){
+
+        localStorage.setItem('loginData', JSON.stringify(data));
+        JSON.parse(localStorage.getItem('loginData'));
+        window.onload = JSON.parse(localStorage.getItem('loginData'));
+
+        btn_Account.replaceChildren(img_profile);
+        btn_Login.replaceWith(btn_Logout);
+        btn_Logout.style = "display: block";
+        modal_Login.style = "display: none";
+        rateSeries.style = "display: block";
+        btn_Rated.style = "display: block";
+
+    } else {
+        const user_Notfound = document.createElement("span");
+        user_Notfound.className = "user_Notfound";
+        user_Notfound.textContent = "Utente / Password errati";
+        modal_Login.append(user_Notfound);
+    }
+
+    
+})
+
+btn_Logout.addEventListener("click", () => {
+    localStorage.removeItem('loginData');
+    location.reload();
+})

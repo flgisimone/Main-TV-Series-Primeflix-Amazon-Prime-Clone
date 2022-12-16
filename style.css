@@ -212,6 +212,16 @@ button{
     font-size: 20px;
 }
 
+.container_modalLogin{
+    display: none;
+    padding: 100%;
+    background-color: rgba(0, 0, 0, 0.815);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .btn_Logout{
     display: none;
 }
@@ -219,6 +229,7 @@ button{
 .img_hero_Series{
     width: 100%;
     height: 200px;
+    object-fit: cover;
 }
 
 .container_hero_Series{
@@ -340,9 +351,10 @@ button{
 }
 
 .card_popular_Series,
-.card_pTopRated_Series{
+.card_TopRated_Series{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 5px;
 }
 
@@ -642,7 +654,7 @@ footer .logo{
     }
 
     .containerSeries h2 {
-        font-size: 30px;
+        font-size: 25px;
         letter-spacing: 1px;
     }
 
@@ -653,7 +665,7 @@ footer .logo{
 
     .img_popular_Series, 
     .img_topRated_Series {
-        width: 180px;
+        width: 160px;
     }
 
     .container_SerieTV_Popular::-webkit-scrollbar{
