@@ -2,6 +2,7 @@ const body = document.querySelector("body");
 const main = document.querySelector(".main")
 const rateSeries = document.querySelector(".rateSeries");
 const btn_Rated = document.querySelector(".btn_Rated");
+
 /*
 window.addEventListener("load", () => {
 
@@ -15,9 +16,6 @@ window.addEventListener("load", () => {
     btn_Rated.style = "display: block";
 
 })*/
-
-
-
 
 /*btn_Logout.addEventListener("click", () => {
     localStorage.removeItem('loginData');
@@ -315,8 +313,6 @@ const popular_TVSeries = (data) =>{
     container_modal_InfoSeries.append(modal_InfoSeries);
 }
 
-
-
 //SEZIONE SERIE TV PIU' VOTATE
 const url_TopRated_TVSeries = "https://api.themoviedb.org/3/tv/top_rated?api_key=735bb0297a3005a4acf5d01890f3249f&language=it&page=1";
 const serieTV_TopRated = document.querySelector(".serieTV_TopRated");
@@ -479,8 +475,6 @@ btn_Logout.addEventListener("click", () => {
     location.reload();
 })
 
-
-
 //RATED
 const rate = document.querySelector(".rate");
 const rated_Form = document.forms.rated_Form;
@@ -492,6 +486,7 @@ rated_Form.addEventListener("submit", (e) => {
         const data = {
             rated: element_rated_Form[0].value
         }
+        
         rate.textContent = "Hai dato un voto di " + data.rated + " su 10"; 
     
         rated_Form.append(rateSeries, btn_Rated, rate);

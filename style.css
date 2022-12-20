@@ -240,7 +240,7 @@ button{
     display: none;
     width: 300px;
     border-radius: 10px;
-    background-color: #152836;
+    background-color: #080808;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -305,7 +305,7 @@ button{
     color: white;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 
 .containerSeries h2{
@@ -403,7 +403,7 @@ button{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    background-color: #152836;
+    background-color: #080808;;
 }
 
 .container_InfoSeries{
@@ -466,7 +466,8 @@ button{
 .overview_TopRatedSeries{
     max-height: 150px;
     overflow-y: hidden;
-    overflow-y: scroll
+    overflow-y: scroll;
+    padding-right: 20px;
 }
 
 .overview_PopularSeries::-webkit-scrollbar{

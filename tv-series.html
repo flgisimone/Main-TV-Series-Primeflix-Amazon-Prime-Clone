@@ -96,28 +96,15 @@
         </section>
         <section class="main">
             <div class="container_SeriesTV">
-                <form class="form_Season">
-                    <select class="season" name="season" placeholder="Inserisci la stagione">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>  
-                    <button type="submit" class="btn_FormSeason"> 
-                        <i class="fa-solid fa-circle-arrow-right btn_Season"></i> Vai alla stagione
-                    </button>
-                </form>
                 <a href="http://127.0.0.1:5500/index.html" class="linkHome">
                     <i class="fa-solid fa-house"></i>
                     Torna alla HOME
                 </a>
-                <h2 class="textSeason">Stagione: 1</h2>
+                <div class="choose_Season">
+                    <button class="btn_Prev" id="btn_Prev"><i class="fa-solid fa-circle-arrow-left"><span>Stagione precedente</span></i></button>
+                    <button class="btn_Next" id="btn_Next"><i class="fa-solid fa-circle-arrow-right"><span>Stagione successiva</span></i></button>
+                </div>
+                <div class="hero_Season"></div>
                 <div class="info_SeriesTV">    
                 </div>
                 <a href="http://127.0.0.1:5500/index.html" class="linkHome">
@@ -151,7 +138,6 @@
         </footer>
         <script src="./script.js" type="module"></script>
         <script src="./tvSeries.js" type="module"></script>
-
     </body>
 </html>
 <!--TI VEDO CHE SPII IL MIO CODICE-->
