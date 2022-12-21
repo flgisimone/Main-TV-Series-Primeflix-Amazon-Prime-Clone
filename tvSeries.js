@@ -79,6 +79,14 @@ let idSeason = 1;
 const btn_Prev = document.querySelector(".btn_Prev")
 const btn_Next = document.querySelector(".btn_Next")
 
+if (idSeason === 1) {
+    document.getElementById("btn_Prev").style = "display: none"
+    document.getElementById("btn_Next").style = "display: block"
+} else {
+    document.getElementById("btn_Prev").style = "display: block"
+    document.getElementById("btn_Next").style = "display: block"
+}
+
   btn_Prev.addEventListener("click", () =>{
     idSeason--
     hero_Season.replaceChildren()
@@ -100,7 +108,14 @@ const btn_Next = document.querySelector(".btn_Next")
     .then((res) => seriesTV(res))
     .catch((e) => console.log("Error:" + e));  
 
-    if (idSeason <= 1) document.getElementById("btn_Prev").disabled = true;
+    if (idSeason === 1) {
+        document.getElementById("btn_Prev").style = "display: none"
+        document.getElementById("btn_Next").style = "display: block"
+    } else {
+        document.getElementById("btn_Prev").style = "display: block"
+        document.getElementById("btn_Next").style = "display: block"
+    }
+        
   })
 
   btn_Next.addEventListener("click", () =>{
@@ -113,7 +128,8 @@ const btn_Next = document.querySelector(".btn_Next")
     fetch(url_infoSeries)
     .then((res) => res.json())
     .then((res) => {
-        if(idSeason > res.number_of_seasons) if(!alert('Stagione inesistente')){window.location.reload();}
+        if(idSeason >= res.number_of_seasons) 
+        document.getElementById("btn_Next").style = "display: none"; 
     })
     .catch((e) => console.log("Error:" + e));  
 
@@ -132,10 +148,15 @@ const btn_Next = document.querySelector(".btn_Next")
     .then((res) => seriesTV(res))
     .catch((e) => console.log("Error:" + e));  
 
-    if (idSeason < 1) document.getElementById("btn_Prev").disabled = true;
+    if (idSeason === 1) {
+        document.getElementById("btn_Prev").style = "display: none"
+        document.getElementById("btn_Next").style = "display: block"
+    } else {
+        document.getElementById("btn_Next").style = "display: block"
+        document.getElementById("btn_Prev").style = "display: block"
+
+    }
     })
-
-
 
 const url_TVSeries = `https://api.themoviedb.org/3/tv/${idSeries}/season/${idSeason}?api_key=735bb0297a3005a4acf5d01890f3249f&language=it`
 
@@ -266,50 +287,6 @@ const seriesTV = (data) =>{
     }
 
 }
-
-fetch(url_infoSeries)
-.then((res) => res.json())
-.then((res) => season_404(res))
-.catch((e) => console.log("Error:" + e));  
-
-const season_404 = (data) => {
-    const hero_Season = document.querySelector(".hero_Season");
-    const container_Hero = document.createElement("div");
-    const img_Hero = document.createElement("img");
-    const info_Hero = document.createElement("div");
-    const name_Season = document.createElement("h3");
-    const air_date = document.createElement("span");
-    const overview_Season = document.createElement("p");
-    const container_linkEpisode = document.createElement("div")
-
-    hero_Season.className = "hero_Season";
-    container_Hero.className = "container_Hero";
-    img_Hero.className = "img_Hero";
-    info_Hero.className = "info_Hero";
-    name_Season.className = "name_Season";
-    air_date.className = "air_date";
-    overview_Season.className = "overview_Season";
-    container_linkEpisode.className = "container_linkEpisode"
-
-    img_Hero.setAttribute("src", "https://image.tmdb.org/t/p/original/" + data.poster_path);
-    name_Season.textContent = data.name;
-    air_date.textContent ="MESSA IN ONDA: " + data.air_date.split("-").reverse().join("-");
-    overview_Season.textContent = "TRAMA: " + data.overview;
-
-    let nEp = [data.episodes][0];
-    for(let i=0; i<nEp.length; i++){
-        const link_Episode = document.createElement("a");
-        link_Episode.className = "link_Episode";
-        link_Episode.setAttribute("href", ("#ep"+JSON.stringify(data.episodes[i].episode_number)))
-        link_Episode.textContent = "Episodio " + JSON.stringify(data.episodes[i].episode_number) + " - " + data.episodes[i].name;
-        container_linkEpisode.append(link_Episode)
-        info_Hero.append(name_Season, air_date, overview_Season, container_linkEpisode)
-    }
-
-        container_Hero.append(img_Hero, info_Hero);
-    hero_Season.append(container_Hero);
-}
-
 
 btn_Logout.addEventListener("click", () => {
     localStorage.removeItem('loginData');
