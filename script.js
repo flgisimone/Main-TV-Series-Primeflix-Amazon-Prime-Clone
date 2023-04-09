@@ -282,7 +282,7 @@ const popular_TVSeries = (data) =>{
         }
         voteAverage_PopularSeries.textContent = "Valutazione media: " + data.results[i].vote_average + "/10";
         voteCount_PopularSeries.textContent = "Totale valutazioni: " + data.results[i].vote_count;
-        text_Play.setAttribute("href", `http://127.0.0.1:5500/tv-series.html?id=${idSeries}`);
+        text_Play.setAttribute("href", `/tv-series.html?id=${idSeries}`);
         text_Play.textContent = "Riproduci";
 
         text_Play.append(btn_Play);
